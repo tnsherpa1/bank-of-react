@@ -1,4 +1,4 @@
-const credits = [
+const CreditData = [
   {
     "id": "963a03dd-1388-4267-bee7-f061886522e5",
     "description": "Refined Frozen Soap",
@@ -61,4 +61,4 @@ const credits = [
   }
 ];
 
-module.exports = credits;
+export default CreditData;
