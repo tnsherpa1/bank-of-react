@@ -1,16 +1,18 @@
 import React, {Component} from 'react'
 import DebitData from '../api/debits'
+import DebitItem from './DebitItem'
 
 class Debits extends Component {
   render() {
+    const debitsList = DebitData.map((debit)=>{
+      return <DebitItem description={debit.description}
+                        amount={debit.amount}
+                        date={debit.date} />
+    })
     return (
-      <ul>
-      {
-        DebitData.map(item=>{
-          return <li>{item.description}</li>
-      })
-      }
-      </ul>
+      <div>
+        {debitsList}
+      </div>
     )
   }
 }
