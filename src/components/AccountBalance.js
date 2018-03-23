@@ -1,17 +1,24 @@
 import React, {Component} from 'react'
-import DebitData from '../api/debits'
-import CreditData from '../api/credits'
 
 class AccountBalance extends Component {
   render() {
+    const debitsTotal = this.props.debits.reduce((sum, item)=>{
+      return item.amount + sum
+    },0)
+    const creditsTotal = this.props.credits.reduce((sum, item)=>{
+      return item.amount + sum
+    },0)
     return (
       <div>
-        Balance:
-        {
-          this.props.debits.map(item=>{
-            return item.amount
-          })
-        }
+        <p>
+        Debits:
+          {debitsTotal}
+        </p>
+        <p>
+        Credits:
+          {creditsTotal}
+        </p>
+        <p>Balance: {debitsTotal-creditsTotal}</p>
       </div>
     );
   }
