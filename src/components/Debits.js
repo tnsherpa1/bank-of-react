@@ -11,6 +11,7 @@ class Debits extends Component {
     })
     return (
       <div>
+        <h1>DEBITS:</h1>
         {debitsList}
       </div>
     )
